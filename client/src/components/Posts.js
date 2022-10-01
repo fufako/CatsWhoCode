@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-function Posts() {
+const Posts = () => {
   const [posts, setPosts] = useState([{}])
 
   useEffect(() => {
@@ -20,7 +20,13 @@ function Posts() {
       {posts.length === 0 ? (
         <p>Loading...</p>
       ) : (
-        posts.map((post, i) => <p key={i}>{post.title}</p>)
+        posts.map((post, i) => (
+          <div className="post" key={i}>
+            <p>{post.title}</p>
+            <p>{post.content}</p>
+            <p>{post.date}</p>
+          </div>
+        ))
       )}
     </div>
   )

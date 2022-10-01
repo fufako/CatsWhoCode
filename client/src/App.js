@@ -1,6 +1,10 @@
-import Posts from "./components/Posts"
+import Header from "./components/Header"
 function App() {
-  return <Posts />
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
 
 export default App

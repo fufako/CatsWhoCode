@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
-const post_controller = require("../controllers/postsController")
+const controller = require("../controllers/controller")
 
-router.get("/api", post_controller.posts)
+router.get("/api", controller.posts)
 
 module.exports = router
