@@ -10,6 +10,13 @@ exports.posts = (req, res, next) => {
 }
 
 exports.posts_post = (req, res, next) => {
-  console.log(req.body)
-  res.send("good")
+  const post = new Post({
+    content: req.body.content,
+    title: req.body.title,
+    date: req.body.date,
+  }).save((err) => {
+    if (err) {
+      return next(err)
+    }
+  })
 }
