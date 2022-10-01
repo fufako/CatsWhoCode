@@ -10,9 +10,9 @@ const Posts = (props) => {
       ) : (
         posts.map((post, i) => (
           <div className="post" key={i}>
-            <p>{post.title}</p>
-            <p>{post.content}</p>
-            <p>{post.date}</p>
+            /fufako
+            <p className="title">{post.title}</p>
+            <p className="date">{post.date}</p>
           </div>
         ))
       )}

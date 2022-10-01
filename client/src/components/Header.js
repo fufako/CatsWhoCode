@@ -14,15 +14,17 @@ const Header = (props) => {
           {" "}
           <h1>Blog</h1>
         </Link>
-        <p>
-          <Link to="CatsWhoCode/create"> Create</Link>
-        </p>
-        <p>
-          <Link to="CatsWhoCode/signup"> Sign up </Link>
-        </p>
-        <p>
-          <Link to="CatsWhoCode/login"> Log in</Link>
-        </p>
+        <div className="links">
+          <p>
+            <Link to="CatsWhoCode/create"> Create</Link>
+          </p>
+          <p>
+            <Link to="CatsWhoCode/signup"> Sign up </Link>
+          </p>
+          <p>
+            <Link to="CatsWhoCode/login"> Log in</Link>
+          </p>
+        </div>
       </div>
 
       <Routes>
