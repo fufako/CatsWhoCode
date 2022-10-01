@@ -1,9 +1,19 @@
 import Header from "./components/Header"
-function App() {
+import React, { useEffect, useState } from "react"
+const App = () => {
+  const [posts, setPosts] = useState([{}])
+
+  useEffect(() => {
+    fetch("/api")
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        setPosts(data)
+      })
+  }, [])
   return (
-    <>
-      <Header />
-    </>
+    <>{posts.length === 0 ? <p>Loading...</p> : <Header posts={posts} />}</>
   )
 }
 

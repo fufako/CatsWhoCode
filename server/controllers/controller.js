@@ -6,6 +6,10 @@ exports.posts = (req, res, next) => {
       return next(err)
     }
     res.json(posts_list)
-    console.log(posts_list)
   })
+}
+
+exports.posts_post = (req, res, next) => {
+  console.log(req.body)
+  res.send("good")
 }

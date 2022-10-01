@@ -1,10 +1,11 @@
 import Posts from "./Posts"
 
-function Home() {
+function Home(props) {
+  const { posts } = props
   return (
     <>
       <div>Home</div>
-      <Posts />
+      <Posts posts={posts} />
     </>
   )
 }

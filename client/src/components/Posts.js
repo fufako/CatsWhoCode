@@ -1,19 +1,7 @@
 import React, { useEffect, useState } from "react"
 
-const Posts = () => {
-  const [posts, setPosts] = useState([{}])
-
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => {
-        setPosts(data)
-      })
-  }, [])
-
-  console.log(posts)
+const Posts = (props) => {
+  const { posts } = props
 
   return (
     <div className="posts-container">

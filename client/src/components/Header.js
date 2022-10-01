@@ -2,8 +2,11 @@ import { Routes, Route, Link } from "react-router-dom"
 import Login from "./Login"
 import Signup from "./Signup"
 import Home from "./Home"
+import Create from "./Create"
 
-const Header = () => {
+const Header = (props) => {
+  const { posts } = props
+
   return (
     <>
       <div className="header">
@@ -11,7 +14,9 @@ const Header = () => {
           {" "}
           <h1>Blog</h1>
         </Link>
-
+        <p>
+          <Link to="CatsWhoCode/create"> Create</Link>
+        </p>
         <p>
           <Link to="CatsWhoCode/signup"> Sign up </Link>
         </p>
@@ -21,9 +26,10 @@ const Header = () => {
       </div>
 
       <Routes>
-        <Route path="/CatsWhoCode" element={<Home />} />
+        <Route path="/CatsWhoCode" element={<Home posts={posts} />} />
         <Route path="CatsWhoCode/signup" element={<Signup />} />
         <Route path="CatsWhoCode/login" element={<Login />} />
+        <Route path="CatsWhoCode/create" element={<Create />} />
       </Routes>
     </>
   )
