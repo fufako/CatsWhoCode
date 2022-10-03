@@ -12,6 +12,8 @@ const App = () => {
         setPosts(data)
       })
   }, [])
+
+  console.log(posts)
   return (
     <>{posts.length === 0 ? <p>Loading...</p> : <Header posts={posts} />}</>
   )

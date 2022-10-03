@@ -10,6 +10,7 @@ exports.posts = (req, res, next) => {
 }
 
 exports.posts_post = (req, res, next) => {
+  console.log(req.body.content)
   const post = new Post({
     content: req.body.content,
     title: req.body.title,
