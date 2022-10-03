@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Posts = (props) => {
   const { posts } = props
@@ -9,11 +9,13 @@ const Posts = (props) => {
         <p>Loading...</p>
       ) : (
         posts.map((post, i) => (
-          <div className="post" key={i}>
-            /fufako
-            <p className="title">{post.title}</p>
-            <p className="date">{post.date}</p>
-          </div>
+          <Link to={`/posts/${post._id}`}>
+            <div className="post" key={i}>
+              /fufako
+              <p className="title">{post.title}</p>
+              <p className="date">{post.date}</p>
+            </div>
+          </Link>
         ))
       )}
     </div>

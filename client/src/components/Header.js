@@ -3,6 +3,7 @@ import Login from "./Login"
 import Signup from "./Signup"
 import Home from "./Home"
 import Create from "./Create"
+import Post from "./Post"
 
 const Header = (props) => {
   const { posts } = props
@@ -29,6 +30,8 @@ const Header = (props) => {
 
       <Routes>
         <Route path="/CatsWhoCode" element={<Home posts={posts} />} />
+        <Route path="CatsWhoCode/post/:id" element={<Post />} />
+
         <Route path="CatsWhoCode/signup" element={<Signup />} />
         <Route path="CatsWhoCode/login" element={<Login />} />
         <Route path="CatsWhoCode/create" element={<Create />} />
