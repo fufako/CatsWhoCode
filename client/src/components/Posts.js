@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Author from "../images/author.png"
 
 const Posts = (props) => {
   const { posts } = props
@@ -18,7 +19,10 @@ const Posts = (props) => {
             }}
           >
             <div className="post" key={i}>
-              <p className="author">fufako</p>
+              <p className="author">
+                {" "}
+                <img src={Author} alt="" /> fufako
+              </p>
               <p className="title">{post.title}</p>
               <p className="date">{post.date}</p>
             </div>

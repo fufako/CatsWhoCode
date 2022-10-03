@@ -13,7 +13,7 @@ const Header = (props) => {
       <div className="header">
         <Link to="CatsWhoCode">
           {" "}
-          <h1>Blog</h1>
+          <h1>Cats Who Code</h1>
         </Link>
         <div className="links">
           <p>
