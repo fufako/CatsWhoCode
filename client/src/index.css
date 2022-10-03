@@ -32,6 +32,9 @@ body {
   display: flex;
   gap: 20px;
 }
+.create {
+  background-color: #eeeeee;
+}
 .parallax {
   /* The image used */
   background: url("./images/bg.png");

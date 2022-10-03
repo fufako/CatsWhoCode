@@ -27,6 +27,7 @@ app.use(function (req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   )
+  res.header("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
   next()
 })
 app.use(express.json())
@@ -38,7 +39,7 @@ app.use(express.urlencoded({ extended: false }))
 
 passport.use(
   new LocalStrategy((username, password, done) => {
-    User.findOne({ name: username }, (err, user) => {
+    User.findOne({ username: username }, (err, user) => {
       if (err) return done(err)
       if (!user) return done(null, false, { message: "Incorrect username" })
       bcrypt.compare(password, user.password, (err, res) => {
@@ -54,6 +55,7 @@ passport.use(
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user
+  console.log(res.locals.currentUser)
   next()
 })
 

@@ -6,13 +6,17 @@ function Login() {
       username: event.target.username.value,
       password: event.target.password.value,
     }
-    fetch("http://localhost:5000/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
-    }).then()
+      credentials: "include",
+    })
+      .then((res) => res.json())
+      .then(console.log)
+      .catch(console.error)
   }
   return (
     <>

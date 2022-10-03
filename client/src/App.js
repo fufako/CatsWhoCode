@@ -1,7 +1,8 @@
 import Header from "./components/Header"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useReducer, useState } from "react"
 const App = () => {
   const [posts, setPosts] = useState([{}])
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     fetch("/api")
@@ -11,11 +12,23 @@ const App = () => {
       .then((data) => {
         setPosts(data)
       })
+
+    fetch("/me")
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        setUser(data)
+      })
   }, [])
 
-  console.log(posts)
+  console.log(user)
   return (
-    <>{posts.length === 0 ? <p>Loading...</p> : <Header posts={posts} />}</>
+    <>
+      {posts.length === 0 ? <p>Loading...</p> : <Header posts={posts} />}
+
+      <p>{user.username}</p>
+    </>
   )
 }
 

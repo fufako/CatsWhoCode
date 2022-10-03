@@ -10,4 +10,6 @@ router.post("/login", controller.login)
 
 router.post("/signup", controller.signup)
 
+router.get("/me", controller.me)
+
 module.exports = router

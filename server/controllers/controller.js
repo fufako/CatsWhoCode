@@ -18,7 +18,7 @@ exports.posts = (req, res, next) => {
 exports.posts_post = (req, res, next) => {
   date = new Date()
   console.log(req.body.content)
-  const post = new Post({
+  new Post({
     content: req.body.content,
     title: req.body.title,
     date: DateTime.fromJSDate(date).toFormat("yyyy-MM-dd, HH:mm"),
@@ -28,15 +28,20 @@ exports.posts_post = (req, res, next) => {
     }
   })
 }
-exports.login = (req, res, next) => {
-  exports.login_post = passport.authenticate("local")
-  // {
-  //   successRedirect: "/",
-  //   failureRedirect: "/login",
-  //   // failureFlash: true
-  // }
-  res.send()
-}
+// exports.login = (req, res, next) => {
+//   // return passport.authenticate("local", {
+//   //   successRedirect: "http://localhost:3000/",
+//   //   failureRedirect: "http://localhost:3000/login",
+//   // })(req, res, next)
+
+//   res.json({ message: "Hey form json" })
+// }
+
+exports.login = passport.authenticate("local", {
+  successRedirect: "/",
+  failureRedirect: "/",
+  // failureFlash: true
+})
 
 exports.signup = (req, res, next) => {
   console.log(req.body.username)
@@ -52,4 +57,8 @@ exports.signup = (req, res, next) => {
     })
     console.log(hashedPassword)
   })
+}
+
+exports.me = (req, res, next) => {
+  res.json(res.locals.currentUser)
 }
