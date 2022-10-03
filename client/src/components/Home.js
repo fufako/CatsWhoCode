@@ -4,7 +4,7 @@ function Home(props) {
   const { posts } = props
   return (
     <>
-      <div>Home</div>
+      <div className="parallax">d</div>
       <Posts posts={posts} />
     </>
   )

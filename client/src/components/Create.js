@@ -20,7 +20,7 @@ function Create() {
       content: content,
       date: new Date(),
     }
-    const result = fetch("http://localhost:5000/api", {
+    fetch("http://localhost:5000/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

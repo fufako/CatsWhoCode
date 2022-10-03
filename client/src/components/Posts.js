@@ -9,9 +9,16 @@ const Posts = (props) => {
         <p>Loading...</p>
       ) : (
         posts.map((post, i) => (
-          <Link to={`/posts/${post._id}`}>
+          <Link
+            to={`./post/${post._id}`}
+            state={{
+              title: post.title,
+              content: post.content,
+              date: post.date,
+            }}
+          >
             <div className="post" key={i}>
-              /fufako
+              <p className="author">fufako</p>
               <p className="title">{post.title}</p>
               <p className="date">{post.date}</p>
             </div>
