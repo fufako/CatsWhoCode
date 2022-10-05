@@ -27,14 +27,6 @@ const Header = (props) => {
           </p>
         </div>
       </div>
-
-      <Routes>
-        <Route path="/CatsWhoCode" element={<Home posts={posts} />} />
-        <Route path="CatsWhoCode/post/:id" element={<Post />} />
-        <Route path="CatsWhoCode/signup" element={<Signup />} />
-        <Route path="CatsWhoCode/login" element={<Login />} />
-        <Route path="CatsWhoCode/create" element={<Create />} />
-      </Routes>
     </>
   )
 }
