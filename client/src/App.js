@@ -6,6 +6,7 @@ import Signup from "./components/Signup"
 import Home from "./components/Home"
 import Create from "./components/Create"
 import Post from "./components/Post"
+
 const App = () => {
   const [posts, setPosts] = useState([{}])
   const [user, setUser] = useState({})
